@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -16,6 +17,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="123 123 123" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="87S-vn-QZ6">
+                                <rect key="frame" x="20" y="263" width="353" height="71.666666666666686"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="60"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="ENZ-kE-hYo">
                                 <rect key="frame" x="20" y="350.66666666666669" width="353" height="75.666666666666686"/>
                                 <subviews>
@@ -32,7 +39,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <action selector="buttonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ody-Lv-p95"/>
+                                            <action selector="clearButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="UsZ-Mt-OS9"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8uU-b0-lxe">
@@ -48,7 +55,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <action selector="buttonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8oj-qq-l7b"/>
+                                            <action selector="operationButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Kt7-6W-doP"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -117,7 +124,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <action selector="buttonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="scN-aX-Ndy"/>
+                                            <action selector="operationButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="TsL-tj-r2M"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -186,7 +193,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <action selector="buttonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Sjh-9U-HTM"/>
+                                            <action selector="operationButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XYZ-QV-4Ax"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -255,7 +262,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <action selector="buttonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="FYd-LJ-9wF"/>
+                                            <action selector="operationButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RTH-5b-1Y1"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -308,7 +315,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <action selector="buttonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="THL-rU-pxl"/>
+                                            <action selector="calculateButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hPR-N1-cui"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -335,13 +342,19 @@
                             <constraint firstItem="8uU-b0-lxe" firstAttribute="width" secondItem="RK6-5a-9K5" secondAttribute="width" id="fQA-cG-9qB"/>
                             <constraint firstItem="xYw-NE-BXv" firstAttribute="height" secondItem="6Tk-OE-BBY" secondAttribute="height" multiplier="0.1" id="fT1-Up-O3D"/>
                             <constraint firstItem="bsO-jT-jUS" firstAttribute="width" secondItem="bEL-FH-Ydg" secondAttribute="width" id="hPm-P2-SGB"/>
+                            <constraint firstItem="ENZ-kE-hYo" firstAttribute="top" secondItem="87S-vn-QZ6" secondAttribute="bottom" constant="16" id="jtb-6y-MVs"/>
                             <constraint firstItem="w87-XU-xW6" firstAttribute="top" secondItem="xYw-NE-BXv" secondAttribute="bottom" constant="16" id="lym-0w-uwS"/>
                             <constraint firstItem="xYw-NE-BXv" firstAttribute="top" secondItem="ENZ-kE-hYo" secondAttribute="bottom" constant="20" id="oUU-v7-f3E"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="87S-vn-QZ6" secondAttribute="trailing" constant="20" id="pqG-Gb-eoz"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="xYw-NE-BXv" secondAttribute="trailing" constant="20" id="rt5-xz-lb3"/>
+                            <constraint firstItem="87S-vn-QZ6" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="sWi-aN-hUt"/>
                             <constraint firstItem="ENZ-kE-hYo" firstAttribute="height" secondItem="6Tk-OE-BBY" secondAttribute="height" multiplier="0.1" id="w58-tZ-41E"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ENZ-kE-hYo" secondAttribute="trailing" constant="20" id="w5M-QJ-8HN"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="label" destination="87S-vn-QZ6" id="ecq-li-T7E"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
