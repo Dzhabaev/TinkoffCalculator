@@ -48,6 +48,7 @@ class ViewController: UIViewController {
     // MARK: - Private Properties
     
     private var calculationHistory: [CalculationHistoryItem] = []
+    private var noCalculate = "NoData"
     
     private lazy var numberFormatter: NumberFormatter = {
         let numberFormatter = NumberFormatter()
@@ -62,6 +63,11 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         resetLabelText()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: false)
     }
     
     // MARK: - IBAction
@@ -123,7 +129,20 @@ class ViewController: UIViewController {
         } catch {
             label.text = "Ошибка"
         }
+        noCalculate = label.text ?? "NoData"
+        if calculationHistory.count == 1 {
+            noCalculate = "NoData"
+        }
         calculationHistory.removeAll()
+    }
+    
+    @IBAction func showCalculationsList(_ sender: Any) {
+        let sb = UIStoryboard(name: "Main", bundle: nil)
+        let calculationsListVC = sb.instantiateViewController(identifier: "CalculationsListViewController")
+        if let vc = calculationsListVC as? CalculationsListViewController {
+            vc.result = noCalculate
+        }
+        navigationController?.pushViewController(calculationsListVC, animated: true)
     }
     
     // MARK: - Private Methods
