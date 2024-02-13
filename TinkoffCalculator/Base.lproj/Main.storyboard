@@ -30,6 +30,7 @@
                                     <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="historyButton" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ct5-ce-a2T" userLabel="historyButton">
                                         <rect key="frame" x="0.0" y="0.0" width="168.66666666666666" height="71.333333333333329"/>
                                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="historyButton"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal">
@@ -373,6 +374,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Калькулятор" id="F4p-Dy-AGa"/>
                     <connections>
+                        <outlet property="historyButton" destination="ct5-ce-a2T" id="Q6k-NH-7Rb"/>
                         <outlet property="label" destination="87S-vn-QZ6" id="ecq-li-T7E"/>
                     </connections>
                 </viewController>

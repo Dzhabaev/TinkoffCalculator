@@ -44,6 +44,7 @@ class ViewController: UIViewController {
     // MARK: - IBOutlet
     
     @IBOutlet weak var label: UILabel!
+    @IBOutlet weak var historyButton: UIButton!
     
     // MARK: - Private Properties
     
@@ -63,6 +64,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         resetLabelText()
+        historyButton.accessibilityIdentifier = "historyButton"
     }
     
     override func viewWillAppear(_ animated: Bool) {
