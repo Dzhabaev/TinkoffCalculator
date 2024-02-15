@@ -49,7 +49,8 @@ final class ViewController: UIViewController {
     // MARK: - Private Properties
     
     private var calculationHistory: [CalculationHistoryItem] = []
-    private var calculations: [(expression: [CalculationHistoryItem], result: Double)] = []
+    private var calculations: [Calculation] = []
+    private let calculationHistoryStorage = CalculationHistoryStorage()
     private var noCalculate = "NoData"
     
     private lazy var numberFormatter: NumberFormatter = {
@@ -66,6 +67,7 @@ final class ViewController: UIViewController {
         super.viewDidLoad()
         resetLabelText()
         historyButton.accessibilityIdentifier = "historyButton"
+        calculations = calculationHistoryStorage.loadHistory()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -129,7 +131,13 @@ final class ViewController: UIViewController {
         do {
             let result = try calculate()
             label.text = numberFormatter.string(from: NSNumber(value: result))
-            calculations.append((calculationHistory, result))
+            let newCalculation = Calculation(
+                expression: calculationHistory,
+                result: result,
+                date: Date()
+            )
+            calculations.append(newCalculation)
+            calculationHistoryStorage.setHistory(calculation: calculations)
         } catch {
             label.text = "Ошибка"
         }
