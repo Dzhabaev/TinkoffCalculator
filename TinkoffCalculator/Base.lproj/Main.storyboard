@@ -390,46 +390,28 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IZ6-jl-pYN">
-                                <rect key="frame" x="196.66666666666666" y="426" width="0.0" height="0.0"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pi8-HH-FsN">
-                                <rect key="frame" x="151.33333333333334" y="500.33333333333326" width="90.666666666666657" height="35"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Закрыть"/>
-                                <connections>
-                                    <action selector="dismissVC:" destination="OF2-YT-AAT" eventType="touchUpInside" id="TCQ-kU-o3u"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Результат:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M25-bc-CT4">
-                                <rect key="frame" x="154.66666666666666" y="340.33333333333331" width="84" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="h8b-Oc-6Nq">
+                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="dO3-RK-abN"/>
                         <color key="backgroundColor" systemColor="systemGray2Color"/>
                         <constraints>
-                            <constraint firstItem="IZ6-jl-pYN" firstAttribute="centerX" secondItem="vnh-CN-Z1a" secondAttribute="centerX" id="GZl-vL-20a"/>
-                            <constraint firstItem="IZ6-jl-pYN" firstAttribute="centerY" secondItem="vnh-CN-Z1a" secondAttribute="centerY" id="LBa-tx-T5z"/>
-                            <constraint firstItem="M25-bc-CT4" firstAttribute="centerX" secondItem="dO3-RK-abN" secondAttribute="centerX" id="MWw-z7-No6"/>
-                            <constraint firstItem="pi8-HH-FsN" firstAttribute="top" secondItem="IZ6-jl-pYN" secondAttribute="bottom" constant="74.333333333333314" id="NKB-if-YN1"/>
-                            <constraint firstItem="IZ6-jl-pYN" firstAttribute="top" secondItem="M25-bc-CT4" secondAttribute="bottom" constant="64.666666666666686" id="VWZ-4K-dr7"/>
-                            <constraint firstItem="pi8-HH-FsN" firstAttribute="centerX" secondItem="dO3-RK-abN" secondAttribute="centerX" id="dew-en-vKo"/>
+                            <constraint firstItem="h8b-Oc-6Nq" firstAttribute="trailing" secondItem="dO3-RK-abN" secondAttribute="trailing" id="8PC-sf-24f"/>
+                            <constraint firstItem="h8b-Oc-6Nq" firstAttribute="leading" secondItem="dO3-RK-abN" secondAttribute="leading" id="CtA-mT-rqt"/>
+                            <constraint firstItem="h8b-Oc-6Nq" firstAttribute="bottom" secondItem="dO3-RK-abN" secondAttribute="bottom" id="m7u-fN-NRq"/>
+                            <constraint firstItem="h8b-Oc-6Nq" firstAttribute="top" secondItem="dO3-RK-abN" secondAttribute="top" id="wRY-o4-tgp"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Прошлые вычисления" id="X5y-sE-K3T"/>
                     <connections>
-                        <outlet property="calculationLabel" destination="IZ6-jl-pYN" id="5bO-8s-3C1"/>
+                        <outlet property="tableView" destination="h8b-Oc-6Nq" id="fPw-1o-IZG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FRW-wQ-an4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1578" y="4"/>
+            <point key="canvasLocation" x="1577.8625954198474" y="3.5211267605633805"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="qel-yR-WES">

@@ -39,7 +39,7 @@ enum CalculationHistoryItem {
     case operation(Operation)
 }
 
-class ViewController: UIViewController {
+final class ViewController: UIViewController {
     
     // MARK: - IBOutlet
     
@@ -49,6 +49,7 @@ class ViewController: UIViewController {
     // MARK: - Private Properties
     
     private var calculationHistory: [CalculationHistoryItem] = []
+    private var calculations: [(expression: [CalculationHistoryItem], result: Double)] = []
     private var noCalculate = "NoData"
     
     private lazy var numberFormatter: NumberFormatter = {
@@ -128,6 +129,7 @@ class ViewController: UIViewController {
         do {
             let result = try calculate()
             label.text = numberFormatter.string(from: NSNumber(value: result))
+            calculations.append((calculationHistory, result))
         } catch {
             label.text = "Ошибка"
         }
@@ -142,7 +144,7 @@ class ViewController: UIViewController {
         let sb = UIStoryboard(name: "Main", bundle: nil)
         let calculationsListVC = sb.instantiateViewController(identifier: "CalculationsListViewController")
         if let vc = calculationsListVC as? CalculationsListViewController {
-            vc.result = noCalculate
+            vc.calculations = calculations
         }
         navigationController?.pushViewController(calculationsListVC, animated: true)
     }
