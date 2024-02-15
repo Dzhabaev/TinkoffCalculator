@@ -85,7 +85,7 @@ extension CalculationsListViewController: UITableViewDelegate {
         let currentDate = dateFormatter.string(from: Date())
         
         let label = UILabel()
-        label.text = "Дата: \(currentDate)"
+        label.text = currentDate
         label.textColor = UIColor.white
         
         headerView.addSubview(label)
