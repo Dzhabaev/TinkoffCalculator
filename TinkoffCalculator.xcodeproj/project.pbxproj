@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		7227D2D52B7A561F00B340B7 /* CalculationsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7227D2D42B7A561F00B340B7 /* CalculationsListViewController.swift */; };
+		725D11FD2B83EDFC00EEF12F /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 725D11FC2B83EDFC00EEF12F /* AlertView.swift */; };
 		72C15A012B7EAB1C0064AC92 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72C15A002B7EAB1C0064AC92 /* Storage.swift */; };
 		72DFEEF52B659E7600F0A21B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72DFEEF42B659E7600F0A21B /* AppDelegate.swift */; };
 		72DFEEF72B659E7600F0A21B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72DFEEF62B659E7600F0A21B /* SceneDelegate.swift */; };
@@ -41,6 +42,7 @@
 
 /* Begin PBXFileReference section */
 		7227D2D42B7A561F00B340B7 /* CalculationsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculationsListViewController.swift; sourceTree = "<group>"; };
+		725D11FC2B83EDFC00EEF12F /* AlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
 		72C15A002B7EAB1C0064AC92 /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
 		72DFEEF12B659E7600F0A21B /* TinkoffCalculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TinkoffCalculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		72DFEEF42B659E7600F0A21B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -117,13 +119,14 @@
 			children = (
 				72C159FF2B7EAAB40064AC92 /* Storage */,
 				72FDE3CB2B7B9E7A00299FE5 /* History */,
-				72DFEEF42B659E7600F0A21B /* AppDelegate.swift */,
-				72DFEF022B659E7900F0A21B /* Info.plist */,
-				72DFEEF62B659E7600F0A21B /* SceneDelegate.swift */,
+				725D11FC2B83EDFC00EEF12F /* AlertView.swift */,
 				72DFEEF82B659E7600F0A21B /* ViewController.swift */,
+				72DFEEF42B659E7600F0A21B /* AppDelegate.swift */,
+				72DFEEF62B659E7600F0A21B /* SceneDelegate.swift */,
 				72DFEEFA2B659E7600F0A21B /* Main.storyboard */,
-				72DFEEFD2B659E7900F0A21B /* Assets.xcassets */,
 				72DFEEFF2B659E7900F0A21B /* LaunchScreen.storyboard */,
+				72DFEEFD2B659E7900F0A21B /* Assets.xcassets */,
+				72DFEF022B659E7900F0A21B /* Info.plist */,
 			);
 			path = TinkoffCalculator;
 			sourceTree = "<group>";
@@ -289,6 +292,7 @@
 			files = (
 				7227D2D52B7A561F00B340B7 /* CalculationsListViewController.swift in Sources */,
 				72DFEEF92B659E7600F0A21B /* ViewController.swift in Sources */,
+				725D11FD2B83EDFC00EEF12F /* AlertView.swift in Sources */,
 				72DFEEF52B659E7600F0A21B /* AppDelegate.swift in Sources */,
 				72DFEEF72B659E7600F0A21B /* SceneDelegate.swift in Sources */,
 				72FDE3CD2B7B9EA800299FE5 /* HistoryTableViewCell.swift in Sources */,
