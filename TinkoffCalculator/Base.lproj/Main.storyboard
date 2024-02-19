@@ -24,11 +24,11 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="ENZ-kE-hYo">
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="ENZ-kE-hYo">
                                 <rect key="frame" x="20" y="372.66666666666669" width="353" height="71.333333333333314"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="historyButton" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ct5-ce-a2T" userLabel="historyButton">
-                                        <rect key="frame" x="0.0" y="0.0" width="168.66666666666666" height="71.333333333333329"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="76.333333333333329" height="71.333333333333329"/>
                                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <accessibility key="accessibilityConfiguration" identifier="historyButton"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -43,6 +43,22 @@
                                         </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="showCalculationsList:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rYg-eA-Kio"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8mG-Lq-hU3">
+                                        <rect key="frame" x="92.333333333333343" y="0.0" width="76.333333333333343" height="71.333333333333329"/>
+                                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="40"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="π"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="CornerRadius">
+                                                <integer key="value" value="30"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="piButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zFd-xt-hrm"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Sg-sn-D1z">
@@ -360,7 +376,6 @@
                             <constraint firstItem="jrD-cK-QC5" firstAttribute="height" secondItem="6Tk-OE-BBY" secondAttribute="height" multiplier="0.1" id="ZFS-4k-9s2"/>
                             <constraint firstItem="8uU-b0-lxe" firstAttribute="width" secondItem="RK6-5a-9K5" secondAttribute="width" id="fQA-cG-9qB"/>
                             <constraint firstItem="xYw-NE-BXv" firstAttribute="height" secondItem="6Tk-OE-BBY" secondAttribute="height" multiplier="0.1" id="fT1-Up-O3D"/>
-                            <constraint firstItem="6Sg-sn-D1z" firstAttribute="width" secondItem="RK6-5a-9K5" secondAttribute="width" id="gOf-iT-eY6"/>
                             <constraint firstItem="bsO-jT-jUS" firstAttribute="width" secondItem="bEL-FH-Ydg" secondAttribute="width" id="hPm-P2-SGB"/>
                             <constraint firstItem="ENZ-kE-hYo" firstAttribute="top" secondItem="87S-vn-QZ6" secondAttribute="bottom" constant="16" id="jtb-6y-MVs"/>
                             <constraint firstItem="w87-XU-xW6" firstAttribute="top" secondItem="xYw-NE-BXv" secondAttribute="bottom" constant="16" id="lym-0w-uwS"/>

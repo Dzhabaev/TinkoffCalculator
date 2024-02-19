@@ -52,12 +52,19 @@ final class ViewController: UIViewController {
     private var calculations: [Calculation] = []
     private let calculationHistoryStorage = CalculationHistoryStorage()
     private var noCalculate = "NoData"
+    private var piValue: Double = 0.0
     
     private lazy var numberFormatter: NumberFormatter = {
         let numberFormatter = NumberFormatter()
         numberFormatter.usesGroupingSeparator = false
         numberFormatter.locale = Locale(identifier: "ru_RU")
         numberFormatter.numberStyle = .decimal
+        let screenWidth = UIScreen.main.bounds.width
+        if screenWidth < 400 {
+            numberFormatter.maximumFractionDigits = 8
+        } else {
+            numberFormatter.maximumFractionDigits = 15
+        }
         return numberFormatter
     }()
     
@@ -157,6 +164,14 @@ final class ViewController: UIViewController {
         navigationController?.pushViewController(calculationsListVC, animated: true)
     }
     
+    @IBAction func piButtonPressed(_ sender: UIButton) {
+        calculatePiWithPrecision(10000000) { pi in
+            DispatchQueue.main.async {
+                self.label.text = self.numberFormatter.string(from: NSNumber(value: pi))
+            }
+        }
+    }
+    
     // MARK: - Private Methods
     
     private func calculate() throws -> Double {
@@ -164,12 +179,15 @@ final class ViewController: UIViewController {
         var currentResult = firstNumber
         
         for index in stride(from: 1, through: calculationHistory.count - 1, by: 2) {
-            guard
-                case .operation(let operation) = calculationHistory[index],
-                case .number(let number) = calculationHistory[index + 1]
-            else { break }
-            
-            currentResult = try operation.calculate(currentResult, number)
+            if case .operation(let operation) = calculationHistory[index] {
+                if case .number(let number) = calculationHistory[index + 1], operation == .add || operation == .subtract {
+                    currentResult = try operation.calculate(currentResult, number)
+                } else if case .operation(let nextOperation) = calculationHistory[index + 1], nextOperation == .multiply || nextOperation == .divide {
+                    currentResult = try operation.calculate(currentResult, piValue)
+                } else if case .number(let number) = calculationHistory[index + 1], operation == .multiply || operation == .divide {
+                    currentResult = try operation.calculate(currentResult, number)
+                }
+            }
         }
         
         return currentResult
@@ -177,6 +195,28 @@ final class ViewController: UIViewController {
     
     private func resetLabelText() {
         label.text = "0"
+    }
+    
+    private func calculatePiWithPrecision(_ precision: Int, completion: @escaping (Double) -> Void) {
+        DispatchQueue.global(qos: .userInitiated).async {
+            let pi = self.calculatePi(precision)
+            self.piValue = pi
+            DispatchQueue.main.async {
+                completion(pi)
+            }
+        }
+    }
+    
+    private func calculatePi(_ precision: Int) -> Double {
+        var piValue = 0.0
+        var denominator = 1.0
+        var sign = 1.0
+        for _ in 0..<precision {
+            piValue += sign * (1.0 / denominator)
+            denominator += 2.0
+            sign *= -1.0
+        }
+        return piValue * 4.0
     }
 }
 
